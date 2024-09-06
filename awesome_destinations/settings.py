@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY', default='fallback_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://awesometraveldestinations.onrender.com', 'local_host']
+ALLOWED_HOSTS = ['https://awesometraveldestinations.onrender.com', 'localhost']
 
 
 
