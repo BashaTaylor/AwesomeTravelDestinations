@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Destinations</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Destinations</a>
+                <div class="dropdown-content">
+                    <a href="http://localhost:8000/search_results/?query=Antigua">Antigua</a>
+                    <a href="http://localhost:8000/search_results/?query=Cancun">Cancun</a>
+                    <a href="http://localhost:8000/search_results/?query=Montego">Montego Bay</a>
+                    <a href="http://localhost:8000/search_results/?query=Aruba">Aruba</a>
+                    <a href="http://localhost:8000/search_results/?query=Bahamas">Bahamas</a>
+                    <a href="http://localhost:8000/search_results/?query=Costa Rica">Costa Rica</a>
+                    <a href="http://localhost:8000/search_results/?query=Punta Cana">Punta Cana</a>
+                </div>
+            </li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'travel_blog' %}">Travel Blog</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery⭐</a></li>
+            <li class="search-bar">
+                <form id="search-form" method="get" action="{% url 'search_results' %}">
+                    <input type="text" id="search-query" name="query" placeholder="Search...">
+                    <button type="submit" id="search-button">Go</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <section class="main" id="main">
+            <h1>Awesome Travel Destinations</h1>
+            <h2>Places you must visit</h2>
+            <div class="list">
+                <ol>
+                    <li><a href="http://localhost:8000/search_results/?query=Cancun">Cancun</a></li>
+                    <li><a href="http://localhost:8000/search_results/?query=Antigua">Antigua</a></li>
+                    <li><a href="http://localhost:8000/search_results/?query=Montego">Montego Bay</a></li>
+                    <li><a href="http://localhost:8000/search_results/?query=Aruba">Aruba</a></li>
+                    <li><a href="http://localhost:8000/search_results/?query=Costa Rica">Costa Rica</a></li>
+                    <li><a href="http://localhost:8000/search_results/?query=Bahamas">Bahamas</a></li>
+                    <li><a href="http://localhost:8000/search_results/?query=Punta Cana">Punta Cana</a></li>
+                    <li><a href="http://localhost:8000/destination/16/">Belize</a></li>
+            </div>
+        </section>
+        <div class="new-destination">
+            <a href="{% url 'add_destination' %}" class="btn-primary">Add New Destination</a>
+        </div>
+
+        <section class="destinations" id="destinations">
+
+            {% for destination in destinations %}
+            <div class="images">
+                <h3>{{ destination.name }}</h3>
+                {% if destination.image %}
+                <a href="{% url 'destination_detail' destination.id %}">
+                    <img src="{{ destination.image.url }}" alt="{{ destination.name }}">
+                </a>
+                <div class="button-wrapper">
+                    <a href="{% url 'edit_destination' destination.id %}" class="btn">Edit</a>
+                    <a href="{% url 'delete_destination' destination.id %}" class="btn">Delete</a>
+                </div>
+            </div>
+            {% else %}
+            <p>No image available</p>
+            {% endif %}
+            {% endfor %}
+        </section>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+    <footer>
+        <p id="copy_right">&copy; 2024 BBT
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

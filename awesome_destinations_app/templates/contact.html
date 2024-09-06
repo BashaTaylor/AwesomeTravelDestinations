@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Destinations</a>
+                <div class="dropdown-content">
+                    <a href="http://localhost:8000/search_results/?query=Antigua">Antigua</a>
+                    <a href="http://localhost:8000/search_results/?query=Cancun">Cancun</a>
+                    <a href="http://localhost:8000/search_results/?query=Montego">Montego Bay</a>
+                    <a href="http://localhost:8000/search_results/?query=Aruba">Aruba</a>
+                    <a href="http://localhost:8000/search_results/?query=Bahamas">Bahamas</a>
+                    <a href="http://localhost:8000/search_results/?query=Costa Rica">Costa Rica</a>
+                    <a href="http://localhost:8000/search_results/?query=Punta Cana">Punta Cana</a>
+                </div>
+            </li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'travel_blog' %}">Travel Blog</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li class="search-bar">
+                <form id="search-form" method="get" action="{% url 'search_results' %}">
+                    <input type="text" id="search-query" name="query" placeholder="Search...">
+                    <button type="submit" id="search-button">Go</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <section class="main">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or need more information, feel free to contact us at:</p>
+            <p>Email: contact@awesome-travel.com</p>
+            <p>Phone: 123-456-7890</p>
+            <!-- Contact Form -->
+            <form method="post" action="{% url 'contact_form' %}" class="contact-form">
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- Renders the form with validation errors if any -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email"required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject"placeholder="Subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="button-wrapper">
+                    <button class="btn" type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <footer>
+        <!-- Footer code here -->
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

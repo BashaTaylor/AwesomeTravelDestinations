@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/search_results.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Destinations</a>
+                <div class="dropdown-content">
+                    <a href="http://localhost:8000/search_results/?query=Antigua">Antigua</a>
+                    <a href="http://localhost:8000/search_results/?query=Cancun">Cancun</a>
+                    <a href="http://localhost:8000/search_results/?query=Montego">Montego Bay</a>
+                    <a href="http://localhost:8000/search_results/?query=Aruba">Aruba</a>
+                    <a href="http://localhost:8000/search_results/?query=Bahamas">Bahamas</a>
+                    <a href="http://localhost:8000/search_results/?query=Costa Rica">Costa Rica</a>
+                    <a href="http://localhost:8000/search_results/?query=Punta Cana">Punta Cana</a>
+                </div>
+            </li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'travel_blog' %}">Travel Blog</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li class="search-bar">
+                <form id="search-form" method="get" action="{% url 'search_results' %}">
+                    <input type="text" id="search-query" name="query" placeholder="Search...">
+                    <button type="submit" id="search-button">Go</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Search Results</h1>
+        {% if results %}
+            <ul class="results-list">
+                {% for destination in results %}
+                    <li class="result-item">
+                        <div class="result-content">
+                            {% if destination.image %}
+                                <img src="{{ destination.image.url }}" alt="{{ destination.name }}" class="result-image">
+                            {% endif %}
+                            <div class="result-description">
+                                <strong>{{ destination.name }}</strong><br>
+                                <em>{{ destination.country }}</em><br>
+                                <p>{{ destination.description }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found for "{{ query }}".</p>
+        {% endif %}
+    </div>
+    <footer>
+        <!-- Footer code here -->
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

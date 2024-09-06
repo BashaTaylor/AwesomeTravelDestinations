@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Destinations</a>
+                <div class="dropdown-content">
+                    <a href="http://localhost:8000/search_results/?query=Antigua">Antigua</a>
+                    <a href="http://localhost:8000/search_results/?query=Cancun">Cancun</a>
+                    <a href="http://localhost:8000/search_results/?query=Montego">Montego Bay</a>
+                    <a href="http://localhost:8000/search_results/?query=Aruba">Aruba</a>
+                    <a href="http://localhost:8000/search_results/?query=Bahamas">Bahamas</a>
+                    <a href="http://localhost:8000/search_results/?query=Costa Rica">Costa Rica</a>
+                    <a href="http://localhost:8000/search_results/?query=Punta Cana">Punta Cana</a>
+                </div>
+            </li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'travel_blog' %}">Travel Blog</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li class="search-bar">
+                <form id="search-form" method="get" action="{% url 'search_results' %}">
+                    <input type="text" id="search-query" name="query" placeholder="Search...">
+                    <button type="submit" id="search-button">Go</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-top">
+        <div class="main">
+            <h1>Gallery</h1>
+            <h3>Explore beautiful images from various destinations.</h3>
+            <p>Cancun, Montego Bay, Aruba, Bahamas, Punta Cana, Costa Rica, Belize...</p>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <h1>Carousel</h1>
+        <p>Click at left and swing to right to rotate it (or oposite).</p>
+        <h3>Aruba</h3>
+        <div class="container">
+            <!-- Aruba Section -->
+            <div class="container-carousel" id="carousel-aruba">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Aruba.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba2.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba3.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba4.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba5.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba6.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba7.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba8.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba9.jpg' %}" alt="Aruba">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Aruba10.jpg' %}" alt="Aruba">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Antigua</h3>
+        <div class="container">
+            <!-- Antigua Section -->
+            <div class="container-carousel" id="carousel-antigua">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/antigua.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Antigua2.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Antigua3.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Antigua4.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Antigua6.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Antigua7.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/Antigua8.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/cocos_antigua4.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/cocos-hotel-antigua5.jpg' %}" alt="Antigua">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/antigua9.jpg' %}" alt="Antigua">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Belize</h3>
+        <div class="container">
+            <!-- Belilze Section -->
+            <div class="container-carousel" id="carousel-aruba">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize.jpg' %}" alt="Belize">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize2.jpg' %}" alt="Belize">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize3.jpg' %}" alt="Belize">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize4.jpg' %}" alt="Belize">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize5.jpg' %}" alt="Belize">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize6.jpg' %}" alt="Belize">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize7.jpg' %}" alt="Belize">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize8.jpg' %}" alt="Belize">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Belize10.jpg' %}" alt="Belize">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Cancun</h3>
+        <div class="container">
+            <!-- Cancun Section -->
+            <div class="container-carousel" id="carousel-aruba">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun3.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun4.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun5.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun6.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun7.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun8.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun9.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun10.jpg' %}" alt="Cancun">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Cancun11.jpg' %}" alt="Cancun">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <h3>Montego Bay</h3>
+        <div class="container">
+            <!-- Montego Bay Section -->
+            <div class="container-carousel" id="carousel-aruba">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay1.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay2.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay3.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay4.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay5.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay6.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay7.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay8.jpg' %}" alt="Montego Bay">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Montegobay9.jpg' %}" alt="Montego Bay">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Punta Cana</h3>
+        <div class="container">
+            <!-- Punta Cana Section -->
+            <div class="container-carousel" id="carousel-aruba">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana2.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana3.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana4.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana5.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana6.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana7.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana8.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana9.jpg' %}" alt="Punta Cana">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/Puntacana10.jpg' %}" alt="Punta Cana">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h3>Costa Rica</h3>
+        <div class="container">
+            <!-- Costa Rica Section -->
+            <div class="container-carousel" id="carousel-aruba">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica3.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica4.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica5.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica6.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica7.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica8.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica13.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica10.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica11.jpg' %}" alt="Costa-Rica">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/costa-rica14.jpg' %}" alt="Costa-Rica">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <!-- Footer code here -->
+        <p id="copy_right">&copy; 2024 BBT
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>
