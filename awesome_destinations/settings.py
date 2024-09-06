@@ -56,6 +56,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 ROOT_URLCONF = 'awesome_destinations.urls'
 
 TEMPLATES = [
@@ -126,8 +128,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # If you have a separate static folder for development.
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 
 
 
@@ -149,3 +153,4 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # settings.py
 DEFAULT_FROM_EMAIL = 'bashataylor.22@gmail.com'
+
