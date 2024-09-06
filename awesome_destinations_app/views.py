@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404 
-from TravelDestinations_app.models import Destination
+from awesome_destinations_app.models import Destination
 from .forms import DestinationForm
 from django.core.mail import send_mail
 from .forms import ContactForm

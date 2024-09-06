@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('TravelDestinations_app', '0002_remove_destination_description_destination_country'),
+        ('awesome_destinations_app', '0002_remove_destination_description_destination_country'),
     ]
 
     operations = [
